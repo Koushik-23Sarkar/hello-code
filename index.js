@@ -27,6 +27,9 @@ const io = new Server(server, {
 io.on('connection',(socket)=>{
     console.log('socket connected',socket.id);
     
+
+
+    
     socket.on(ACTIONS.JOIN ,({roomId,userName})=>{
         console.log("On Action join from server !");
         console.log(userName);
