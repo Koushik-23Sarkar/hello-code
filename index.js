@@ -28,7 +28,9 @@ io.on('connection',(socket)=>{
     console.log('socket connected',socket.id);
     
     socket.on(ACTIONS.JOIN ,({roomId,userName})=>{
-        userSocketMap[roomId]=userName;
+        console.log("On Action join from server !");
+        console.log(userName);
+        userSocketMap[socket.id] = userName;
         socket.join(roomId);
         const clients = getAllConnectedClients(roomId);
         console.log(clients);
