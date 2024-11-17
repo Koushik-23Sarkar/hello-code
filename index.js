@@ -42,8 +42,8 @@ io.on('connection',(socket)=>{
         })
     })
 
-    socket.on(ACTIONS.CODE_CHANGE,({roomId,code})=>{
-        socket.in(roomId).emit(ACTIONS.CODE_CHANGE,{code});
+    socket.on(ACTIONS.CODE_CHANGE,({roomId,code , path})=>{
+        socket.in(roomId).emit(ACTIONS.CODE_CHANGE,{code,path:path});
     })
 
     socket.on(ACTIONS.SYNC_CODE,({socketId,code})=>{
